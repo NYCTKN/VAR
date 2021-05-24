@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script src="../js/scoreboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/greensock-js/src/minified/TweenMax.min.js" type="text/javascript" charset="utf-8"></script>
+        
+        <link rel="stylesheet" href="../css/scoreboard.css">
+    </head>
+
+    <body>
+        <div id="scoreboard">
+            <div id="player--container-1" class="player">
+                <span id="player--team-1" class="team"></span>
+                <span id="player--name-1" class="name"></span>
+            </div>
+            <div id="player--container-2" class="player">
+                <span id="player--team-2" class="team"></span>
+                <span id="player--name-2" class="name"></span>
+            </div>
+            <div id="scoreContainer" class="score">
+                <span id="score--player-1"></span>
+                <span>-</span>
+                <span id="score--player-2"></span>
+            </div>
+            <div id="round--container" class="round">
+                <span id="round--value"></span>
+            </div>
+            <div id="set--container" class="set">
+                <span>FIRST TO</span>
+                <span id="set--value"></span>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            var nameSize = '30px'; //default font size of name wrappers, should match 'font-size' value of .wrappers
+            var rdSize = '20px'; //default font size of round container, should match 'font-size' value of #round
+            var p1Move = '+90px'; //distance on x-axis that P1 name should initially be set to prior to load-in animation
+            var p2Move = '-90px'; //distance on x-axis that P2 name should initially be set to prior to load-in animation
+            var rdMove = '-40px'; //distance on y-axis that round should initially be set to prior to load-in animation
+            var nameTime = .3; //amount of time in seconds that the load-in animation for names takes
+            var nameDelay = .2; //amount of time in seconds that the load-in animation for names is delayed before starting
+            var rdTime = .3; //amount of time in seconds that the load-in animation for round info takes
+            var rdDelay = .2; //amount of time in seconds that the load-in animation for round info is delayed before starting
+            var scTime = .3; //amount of time in seconds that the load-in animation for scores takes
+            var scDelay = .45; //amount of time in seconds that the load-in animation for scores is delayed before starting
+            var logoTime = 200; //amount of time the fade-in animation for logos is delayed before starting
+            var adjust2 = '-28px'; //distance on y-axis that scoreboards move when adjusting for 2nd webm
+            var adjust3 = '+28px'; //distance on y-axis that scoreboards move when adjusting for 3rd webm
+            var adjustLg = ['+890px','+30px',.8,'240px','140px']; //array of [distance to move logos on x-axis, "" on y-axis, scaling factor to shrink logos by, original logo width, original logo height]
+        
+        </script>
+
+    </body>
+</html>
