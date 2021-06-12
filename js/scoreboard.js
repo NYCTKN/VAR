@@ -50,6 +50,7 @@ function init(){
 		var p1Score = scObj['p1Score'];
 		var p2Score = scObj['p2Score'];
 		var round = scObj['round'];
+		var set = scObj['set'];
 		
 		if(startup == true){
 			
@@ -64,6 +65,7 @@ function init(){
 			$('#score--player-1').html(p1Score);
 			$('#score--player-2').html(p2Score);
 			$('#round--value').html(round);
+			$('#set--value').html(set);
 			
 			playerContainer1.each(function(i, playerContainer1){ //function to resize font if text string is too long and causes div to overflow its width/height boundaries
 				while(playerContainer1.scrollWidth > playerContainer1.offsetWidth || playerContainer1.scrollHeight > playerContainer1.offsetHeight){
@@ -85,10 +87,18 @@ function init(){
 					$(roundContainer).css('font-size', newFontSize);
 				}
 			});
+
+			setContainer.each(function(i, setContainer){
+				while(setContainer.scrollWidth > setContainer.offsetWidth || setContainer.scrollHeight > setContainer.offsetHeight){
+					var newFontSize = (parseFloat($(setContainer).css('font-size').slice(0,-2)) * .95) + 'px';
+					$(setContainer).css('font-size', newFontSize);
+				}
+			});
 			
 			TweenMax.to('#player--container-1',nameTime,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay}); //animates wrappers traveling back to default css positions while
 			TweenMax.to('#player--container-2',nameTime,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay}); //fading them in, timing/delay based on variables set in scoreboard.html
-			TweenMax.to('#round--value',rdTime,{css:{y: '+0px', opacity: 1},ease:Quad.easeOut,delay:rdDelay});			
+			TweenMax.to('#round--value',rdTime,{css:{y: '+0px', opacity: 1},ease:Quad.easeOut,delay:rdDelay});	
+			TweenMax.to('#set--value',rdTime,{css:{y: '+0px', opacity: 1},ease:Quad.easeOut,delay:rdDelay});		
 			TweenMax.to('#score--value',scTime,{css:{opacity: 1},ease:Quad.easeOut,delay:scDelay});			
 		}
 		else{
@@ -141,6 +151,22 @@ function init(){
 					});
 					
 					TweenMax.to('#round',.3,{css:{opacity: 1},ease:Quad.easeOut,delay:.2});
+				}});
+			}
+
+			if($('#set').text() != set){
+				TweenMax.to('#set',.3,{css:{opacity: 0},ease:Quad.easeOut,delay:0,onComplete:function(){ //same format as changing names just no change in positioning, only fade in/out
+					$('#set').css('font-size',rdSize);
+					$('#set').html(round);					
+			
+					setContainer.each(function(i, setContainer){
+						while(setContainer.scrollWidth > setContainer.offsetWidth || setContainer.scrollHeight > setContainer.offsetHeight){
+							var newFontSize = (parseFloat($(roundContainer).css('font-size').slice(0,-2)) * .95) + 'px';
+							$(setContainer).css('font-size', newFontSize);
+						}
+					});
+					
+					TweenMax.to('#set',.3,{css:{opacity: 1},ease:Quad.easeOut,delay:.2});
 				}});
 			}
 			
