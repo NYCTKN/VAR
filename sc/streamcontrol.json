@@ -1,17 +1,15 @@
 {
-    "cTitle1": "Bloodhawk 2",
-    "cTitle2": "Pepperbeef2Spicy",
+    "cTitle1": "Pepperbeef2Spicy",
+    "cTitle2": "Bloodhawk 2",
     "mText1": "",
     "mText2": "",
     "mText3": "",
     "mText4": "",
-    "p1Name": "Player 1",
     "p1Score": "0",
     "p1Team": "ABC",
-    "p2Name": "Player 2",
     "p2Score": "0",
     "p2Team": "DEF",
     "round": "Just",
     "set": "Casuals",
-    "timestamp": "1624763935"
+    "timestamp": "1624771036"
 }
