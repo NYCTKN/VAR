@@ -5,11 +5,11 @@
   <label x="10" y="44" width="46" height="13">Player 2</label>
   <label x="10" y="74" width="46" height="13">Round</label>
   <label x="10" y="104" width="46" height="13">Set</label>
-  <lineEdit id="p1Name" x="60" y="10" width="170" height="20" dataSet="players.csv" dataField="1" />
-  <lineEdit id="p1Team" x="240" y="10" width="60" height="20" dataSet="players.csv" dataField="2" master="p1Name" />
+  <lineEdit id="cTitle1" x="60" y="10" width="170" height="20" dataSet="players.csv" dataField="1" />
+  <lineEdit id="p1Team" x="240" y="10" width="60" height="20" dataSet="players.csv" dataField="2" master="cTitle1" />
   <spinBox id="p1Score" x="310" y="9" width="42" height="25" maximum="99" />
-  <lineEdit id="p2Name" x="60" y="40" width="170" height="20" dataSet="players.csv" dataField="1"  />
-  <lineEdit id="p2Team" x="240" y="40" width="60" height="20" dataSet="players.csv" dataField="2" master="p2Name" />
+  <lineEdit id="cTitle2" x="60" y="40" width="170" height="20" dataSet="players.csv" dataField="1"  />
+  <lineEdit id="p2Team" x="240" y="40" width="60" height="20" dataSet="players.csv" dataField="2" master="cTitle2" />
   <spinBox id="p2Score" x="310" y="39" width="42" height="25" maximum="99" />
   <comboBox id="round" editable="1" x="60" y="70" width="100" height="20" dataSet="round.csv" dataField="1">
    <comboItem>Just</comboItem>
@@ -22,9 +22,9 @@
    <comboItem>Losers Final</comboItem>
    <comboItem>Grand Final</comboItem>
   </comboBox>
-  <button type="swap" x="170" y="70" width="60" height="23" tooltip="Swap the Scores" id="swap1" swapSet1="p1Name,p1Team,p1Score" swapSet2="p2Name,p2Team,p2Score">Swap</button>
+  <button type="swap" x="170" y="70" width="60" height="23" tooltip="Swap the Scores" id="swap1" swapSet1="cTitle1,p1Team,p1Score" swapSet2="cTitle2,p2Team,p2Score">Swap</button>
   <button type="reset" x="240" y="70" width="60" height="23" tooltip="Reset the Scores" id="reset1" reset="p1Score,p2Score">Reset</button>
-  <button type="reset" x="310" y="70" width="60" height="23" tooltip="Clear Match Info" id="reset2" reset="p1Name,p1Team,p1Score,p2Name,p2Team,p2Score">Clear</button>
+  <button type="reset" x="310" y="70" width="60" height="23" tooltip="Clear Match Info" id="reset2" reset="cTitle1,p1Team,p1Score,cTitle2,p2Team,p2Score">Clear</button>
   <comboBox id="set" editable="1" x="60" y="100" width="100" height="20">
    <comboItem>Casuals</comboItem>
    <comboItem>First to 2</comboItem>

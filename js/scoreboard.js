@@ -13,7 +13,9 @@ function init(){
 	var playerContainer2 = $('#player--container-2');
 	var roundContainer = $('#round--container');
     var setContainer = $('#set--container');
-	
+	var commentatorContainer1 = $('#commentator--container-1'); //variables to shortcut copypasting text resize functions
+	var commentatorContainer2 = $('#commentator--container-2');
+
 	xhr.overrideMimeType('application/json'); //explicitly declares that json should always be processed as a json filetype
 	
 	function pollJSON() {
@@ -36,10 +38,41 @@ function init(){
 	}
 	
     function scoreboard() {
+		setTimeout(logoLoop,logoTime);
         getData();
     }
 
     setTimeout(scoreboard,300);
+
+	function logoLoop(){
+		var initialTime = 700; //initial fade-in time for first logo
+		var intervalTime = 15000; //amount of time between changing of logos
+		var fadeTime = 2000; //duration of crossfade between logos
+		var currentItem = 0; //placement value within logoWrapper container of current logo being operated on in function
+		var itemCount = $('#logo--container').children().length; //number of logo <img> objects located within logoWrapper container
+		
+		if(itemCount > 1){
+			$('#logo--container').find('img').eq(currentItem).fadeIn(initialTime);
+			
+			setInterval(function(){
+				
+				$('#logo--container').find('img').eq(currentItem).fadeOut(fadeTime);
+			
+				if(currentItem == itemCount - 1){
+					currentItem = 0;
+				}
+				else{
+					currentItem++;
+				}
+				
+				$('#logo--container').find('img').eq(currentItem).fadeIn(fadeTime);
+				
+			},intervalTime);
+		}
+		else{
+			$('.logo').fadeIn(initialTime);
+		}
+	}
 
     function getData(){
 		
@@ -51,6 +84,8 @@ function init(){
 		var p2Score = scObj['p2Score'];
 		var round = scObj['round'];
 		var set = scObj['set'];
+		var cTitle1 = scObj['cTitle1'];
+		var cTitle2 = scObj['cTitle2'];
 		
 		if(startup == true){
 			
@@ -66,6 +101,8 @@ function init(){
 			$('#score--player-2').html(p2Score);
 			$('#round--value').html(round);
 			$('#set--value').html(set);
+			$('#commentator--name-1').html(cTitle1);
+			$('#commentator--name-2').html(cTitle2);
 			
 			playerContainer1.each(function(i, playerContainer1){ //function to resize font if text string is too long and causes div to overflow its width/height boundaries
 				while(playerContainer1.scrollWidth > playerContainer1.offsetWidth || playerContainer1.scrollHeight > playerContainer1.offsetHeight){
@@ -92,6 +129,20 @@ function init(){
 				while(setContainer.scrollWidth > setContainer.offsetWidth || setContainer.scrollHeight > setContainer.offsetHeight){
 					var newFontSize = (parseFloat($(setContainer).css('font-size').slice(0,-2)) * .95) + 'px';
 					$(setContainer).css('font-size', newFontSize);
+				}
+			});
+
+			commentatorContainer1.each(function(i, commentatorContainer1){
+				while(commentatorContainer1.scrollWidth > commentatorContainer1.offsetWidth || commentatorContainer1.scrollHeight > commentatorContainer1.offsetHeight){
+					var newFontSize = (parseFloat($(commentatorContainer1).css('font-size').slice(0,-2)) * .95) + 'px';
+					$(commentatorContainer1).css('font-size', newFontSize);
+				}
+			});
+
+			commentatorContainer2.each(function(i, commentatorContainer2){
+				while(commentatorContainer2.scrollWidth > commentatorContainer2.offsetWidth || commentatorContainer2.scrollHeight > commentatorContainer2.offsetHeight){
+					var newFontSize = (parseFloat($(commentatorContainer2).css('font-size').slice(0,-2)) * .95) + 'px';
+					$(commentatorContainer2).css('font-size', newFontSize);
 				}
 			});
 			
@@ -185,6 +236,42 @@ function init(){
 					TweenMax.to('#p2Score',.3,{css:{opacity: 1},ease:Quad.easeOut,delay:.2});
 				}});
 			}
+
+			if($('#commentator--name-1').text() != cTitle1 || $('#commentator--team-1').text() != p1Team){ //if either name or team do not match, fades out wrapper and updates them both
+				TweenMax.to('#commentator--container-1',.3,{css:{x: p1Move, opacity: 0},ease:Quad.easeOut,delay:0,onComplete:function(){ //uses onComplete parameter to execute function after TweenMax
+					$('#commentator--container-1').css('font-size',nameSize); //restores default font size based on variable set in scoreboard.html
+					$('#commentator--name-1').html(cTitle1); //updates name and team html objects with current json values
+					$('#commentator--team-1').html(p1Team);					
+			
+					commentatorContainer1.each(function(i, commentatorContainer1){//same resize functions from above
+						while(commentatorContainer1.scrollWidth > commentatorContainer1.offsetWidth || commentatorContainer1.scrollHeight > commentatorContainer1.offsetHeight){
+							var newFontSize = (parseFloat($(commentatorContainer1).css('font-size').slice(0,-2)) * .95) + 'px';
+							$(commentatorContainer1).css('font-size', newFontSize);
+						}
+					});
+					
+					TweenMax.to('#commentator--name-1',.3,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:.2}); //fades name wrapper back in while moving to original position
+				}});
+			}
+
+			if($('#commentator--name-2').text() != cTitle2 || $('#commentator--team-2').text() != p1Team){ //if either name or team do not match, fades out wrapper and updates them both
+				TweenMax.to('#commentator--container-2',.3,{css:{x: p1Move, opacity: 0},ease:Quad.easeOut,delay:0,onComplete:function(){ //uses onComplete parameter to execute function after TweenMax
+					$('#commentator--container-2').css('font-size',nameSize); //restores default font size based on variable set in scoreboard.html
+					$('#commentator--name-2').html(cTitle1); //updates name and team html objects with current json values
+					$('#commentator--team-2').html(p1Team);					
+			
+					commentatorContainer2.each(function(i, commentatorContainer2){//same resize functions from above
+						while(commentatorContainer2.scrollWidth > commentatorContainer2.offsetWidth || commentatorContainer2.scrollHeight > commentatorContainer2.offsetHeight){
+							var newFontSize = (parseFloat($(commentatorContainer2).css('font-size').slice(0,-2)) * .95) + 'px';
+							$(commentatorContainer2).css('font-size', newFontSize);
+						}
+					});
+					
+					TweenMax.to('#commentator--name-2',.3,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:.2}); //fades name wrapper back in while moving to original position
+				}});
+			}
+
+
 		}
 	}
 

@@ -8,7 +8,7 @@ body {
   height: 1080px;
   overflow: hidden;
   background: transparent;
-  /* background-image: url(../img/TEKKEN.jpg); */
+  background-image: url(../img/TEKKEN.jpg);
   padding: 0px;
   margin: 0px;
   text-transform: uppercase;
@@ -85,4 +85,16 @@ body {
 #player--container-2 {
   left: 1043px;
   text-align: center;
+}
+
+#logo--container {
+  
+}
+
+.logo {
+  width: 175px;
+  height: 175px;
+  position: absolute;
+  left: 873px;
+  top: 877px;
 }

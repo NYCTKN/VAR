@@ -99,7 +99,9 @@ function init(){
 			TweenMax.to('#player--container-2',nameTime,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay}); //fading them in, timing/delay based on variables set in scoreboard.html
 			TweenMax.to('#round--value',rdTime,{css:{y: '+0px', opacity: 1},ease:Quad.easeOut,delay:rdDelay});	
 			TweenMax.to('#set--value',rdTime,{css:{y: '+0px', opacity: 1},ease:Quad.easeOut,delay:rdDelay});		
-			TweenMax.to('#score--value',scTime,{css:{opacity: 1},ease:Quad.easeOut,delay:scDelay});			
+			TweenMax.to('#score--value',scTime,{css:{opacity: 1},ease:Quad.easeOut,delay:scDelay});
+			TweenMax.to('#commentator--container-1',nameTime,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay}); //animates wrappers traveling back to default css positions while
+			TweenMax.to('#commentator--container-2',nameTime,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay}); //fading them in, timing/delay based on variables set in scoreboard.html			
 		}
 		else{
 			game = scObj['game']; //if this is after the first time that getData function has run, changes the value of the local game variable to current json output
@@ -185,6 +187,24 @@ function init(){
 					TweenMax.to('#p2Score',.3,{css:{opacity: 1},ease:Quad.easeOut,delay:.2});
 				}});
 			}
+
+			if($('#p1Name').text() != p1Name || $('#p1Team').text() != p1Team){ //if either name or team do not match, fades out wrapper and updates them both
+				TweenMax.to('#playerContainer1per',.3,{css:{x: p1Move, opacity: 0},ease:Quad.easeOut,delay:0,onComplete:function(){ //uses onComplete parameter to execute function after TweenMax
+					$('#playerContainer1per').css('font-size',nameSize); //restores default font size based on variable set in scoreboard.html
+					$('#p1Name').html(p1Name); //updates name and team html objects with current json values
+					$('#p1Team').html(p1Team);					
+			
+					playerContainer1.each(function(i, playerContainer1){//same resize functions from above
+						while(playerContainer1.scrollWidth > playerContainer1.offsetWidth || playerContainer1.scrollHeight > playerContainer1.offsetHeight){
+							var newFontSize = (parseFloat($(playerContainer1).css('font-size').slice(0,-2)) * .95) + 'px';
+							$(playerContainer1).css('font-size', newFontSize);
+						}
+					});
+					
+					TweenMax.to('#playerContainer1per',.3,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:.2}); //fades name wrapper back in while moving to original position
+				}});
+			}
+
 		}
 	}
 

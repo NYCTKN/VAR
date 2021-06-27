@@ -8,7 +8,7 @@ body {
   height: 1080px;
   overflow: hidden;
   background: transparent;
-  /* background-image: url(../img/TEKKEN.jpg); */
+  background-image: url(../img/TEKKEN.jpg);
   padding: 0px;
   margin: 0px;
   text-transform: uppercase;
@@ -16,20 +16,20 @@ body {
   font-family: "Rubik";
 }
 
-.scoreboard {
+.commentary {
   position: absolute;
   left: 0px;
   top: 0px;
 }
 
-.player {
+.commentator {
   position: absolute;
-  width: 542px;
-  height: 60px;
-  line-height: 60px;
+  width: 654px;
+  height: 90px;
+  line-height: 90px;
   text-align: center;
-  top: 5px;
-  font-size: 30px;
+  top: 934px;
+  font-size: 50px;
   background-color: white;
 }
 
@@ -77,12 +77,20 @@ body {
   color: #ce0e0e;
 }
 
-#player--container-1 {
-  left: 335px;
+#commentator--container-1 {
+  left: 154px;
   text-align: center;
 }
 
-#player--container-2 {
-  left: 1043px;
+#commentator--container-2 {
+  left: 1112px;
   text-align: center;
+}
+
+#logo--container {
+  position: absolute;
+}
+
+.logo {
+
 }
