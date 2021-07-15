@@ -1,6 +1,6 @@
 <html>
     <head>
-        <script src="../js/scoreboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/commentary.js" type="text/javascript" charset="utf-8"></script>
         <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../js/greensock-js/src/minified/TweenMax.min.js" type="text/javascript" charset="utf-8"></script>
         
@@ -10,27 +10,13 @@
     <body>
         <div id="commentary">
             <div id="commentator--container-1" class="commentator">
-                <span id="commentator--team-1" class="team"></span>
-                <span id="commentator--name-1" class="name"></span>
+                <span id="player--team-1" class="team"></span>
+                <span id="player--name-1" class="name"></span>
             </div>
-            <div id="commentator--container-2" class="commentator">
-                <span id="commentator--team-2" class="team"></span>
-                <span id="commentator--name-2" class="name"></span>
+            <div id="commentator--container-2" class="player">
+                <span id="player--team-2" class="team"></span>
+                <span id="player--name-2" class="name"></span>
             </div>
-            <div id="icon--container-1" class="icon">
-                <span id="commentator-1" class="name">C1</span>
-                <span id="icon-1" class="name"></span>
-            </div>
-            <div id="icon--container-2" class="icon">
-                <span id="commentator-2" class="name">C2</span>
-                <span id="icon-2" class="name"></span>
-            </div>
-            <div id="logo--containter">
-                <!-- <img id="logo-1" class="logo" src="../img/NYCTKN_LOGO_WHITE.png"></img> -->
-                <img id="logo-2" class="logo" src="../img/NYC-TKN-MONTHLY-LOGO.png"></img>
-                <!-- <img id="logo-3" class="logo" src="../img/"></img> -->
-            </div>
-            <!--
             <div id="scoreContainer" class="score">
                 <span id="score--player-1"></span>
                 <span>-</span>
@@ -40,15 +26,15 @@
                 <span id="round--value"></span>
             </div>
             <div id="set--container" class="set">
-                <span>FIRST TO</span> 
+                <!-- <span>FIRST TO</span> -->
                 <span id="set--value"></span>
             </div>
-            --> 
         </div>
 
         <script type="text/javascript">
 
             var nameSize = '30px'; //default font size of name wrappers, should match 'font-size' value of .wrappers
+            var comSize = '50px';
             var rdSize = '20px'; //default font size of round container, should match 'font-size' value of #round
             var p1Move = '+90px'; //distance on x-axis that P1 name should initially be set to prior to load-in animation
             var p2Move = '-90px'; //distance on x-axis that P2 name should initially be set to prior to load-in animation

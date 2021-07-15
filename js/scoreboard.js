@@ -105,6 +105,7 @@ function init(){
 			$('#commentator--name-2').html(cTitle2);
 			
 			playerContainer1.each(function(i, playerContainer1){ //function to resize font if text string is too long and causes div to overflow its width/height boundaries
+				$(playerContainer1).css('font-size',nameSize); //restores default font size based on variable set in scoreboard.html
 				while(playerContainer1.scrollWidth > playerContainer1.offsetWidth || playerContainer1.scrollHeight > playerContainer1.offsetHeight){
 					var newFontSize = (parseFloat($(playerContainer1).css('font-size').slice(0,-2)) * .95) + 'px';
 					$(playerContainer1).css('font-size', newFontSize);
@@ -112,6 +113,7 @@ function init(){
 			});
 			
 			playerContainer2.each(function(i, playerContainer2){
+				$(playerContainer2).css('font-size',nameSize); //restores default font size based on variable set in scoreboard.html
 				while(playerContainer2.scrollWidth > playerContainer2.offsetWidth || playerContainer2.scrollHeight > playerContainer2.offsetHeight){
 					var newFontSize = (parseFloat($(playerContainer2).css('font-size').slice(0,-2)) * .95) + 'px';
 					$(playerContainer2).css('font-size', newFontSize);
@@ -119,6 +121,7 @@ function init(){
 			});
 			
 			roundContainer.each(function(i, roundContainer){
+				$(roundContainer).css('font-size',rdSize);
 				while(roundContainer.scrollWidth > roundContainer.offsetWidth || roundContainer.scrollHeight > roundContainer.offsetHeight){
 					var newFontSize = (parseFloat($(roundContainer).css('font-size').slice(0,-2)) * .95) + 'px';
 					$(roundContainer).css('font-size', newFontSize);
@@ -126,6 +129,7 @@ function init(){
 			});
 
 			setContainer.each(function(i, setContainer){
+				$(setContainer).css('font-size',rdSize);
 				while(setContainer.scrollWidth > setContainer.offsetWidth || setContainer.scrollHeight > setContainer.offsetHeight){
 					var newFontSize = (parseFloat($(setContainer).css('font-size').slice(0,-2)) * .95) + 'px';
 					$(setContainer).css('font-size', newFontSize);
@@ -133,6 +137,7 @@ function init(){
 			});
 
 			commentatorContainer1.each(function(i, commentatorContainer1){
+				$(commentatorContainer1).css('font-size',comSize); //restores default font size based on variable set in scoreboard.html
 				while(commentatorContainer1.scrollWidth > commentatorContainer1.offsetWidth || commentatorContainer1.scrollHeight > commentatorContainer1.offsetHeight){
 					var newFontSize = (parseFloat($(commentatorContainer1).css('font-size').slice(0,-2)) * .95) + 'px';
 					$(commentatorContainer1).css('font-size', newFontSize);
@@ -140,6 +145,7 @@ function init(){
 			});
 
 			commentatorContainer2.each(function(i, commentatorContainer2){
+				$(commentatorContainer2).css('font-size',comSize); //restores default font size based on variable set in scoreboard.html
 				while(commentatorContainer2.scrollWidth > commentatorContainer2.offsetWidth || commentatorContainer2.scrollHeight > commentatorContainer2.offsetHeight){
 					var newFontSize = (parseFloat($(commentatorContainer2).css('font-size').slice(0,-2)) * .95) + 'px';
 					$(commentatorContainer2).css('font-size', newFontSize);
