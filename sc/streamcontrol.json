@@ -5,11 +5,13 @@
     "mText2": "",
     "mText3": "",
     "mText4": "",
-    "p1Score": "0",
-    "p1Team": "ABC",
+    "p1Name": "VALLE",
+    "p1Score": "3",
+    "p1Team": "CALI",
+    "p2Name": "DAIGO",
     "p2Score": "0",
-    "p2Team": "DEF",
+    "p2Team": "BEAST",
     "round": "Just",
     "set": "Casuals",
-    "timestamp": "1624771036"
+    "timestamp": "1626469721"
 }
