@@ -36,43 +36,13 @@ function init(){
             scoreboard();
 		}
 	}
-	
+
     function scoreboard() {
-		setTimeout(logoLoop,logoTime);
         getData();
     }
 
+	setTimeout(logoLoop,200);
     setTimeout(scoreboard,300);
-
-	function logoLoop(){
-		var initialTime = 700; //initial fade-in time for first logo
-		var intervalTime = 15000; //amount of time between changing of logos
-		var fadeTime = 2000; //duration of crossfade between logos
-		var currentItem = 0; //placement value within logoWrapper container of current logo being operated on in function
-		var itemCount = $('#logo--container').children().length; //number of logo <img> objects located within logoWrapper container
-		
-		if(itemCount > 1){
-			$('#logo--container').find('img').eq(currentItem).fadeIn(initialTime);
-			
-			setInterval(function(){
-				
-				$('#logo--container').find('img').eq(currentItem).fadeOut(fadeTime);
-			
-				if(currentItem == itemCount - 1){
-					currentItem = 0;
-				}
-				else{
-					currentItem++;
-				}
-				
-				$('#logo--container').find('img').eq(currentItem).fadeIn(fadeTime);
-				
-			},intervalTime);
-		}
-		else{
-			$('.logo').fadeIn(initialTime);
-		}
-	}
 
     function getData(){
 		
@@ -281,6 +251,39 @@ function init(){
 
 
 		}
+	}
+
+	function logoLoop(){
+		console.log("is looping...now!");
+		var initialTime = 700; //initial fade-in time for first logo
+		var intervalTime = 15000; //amount of time between changing of logos
+		var fadeTime = 2000; //duration of crossfade between logos
+		var currentItem = 0; //placement value within logoWrapper container of current logo being operated on in function
+		var itemCount = $('#logo--container').children().length; //number of logo <img> objects located within logoWrapper container
+		
+		if(itemCount > 1){
+			$('#logo--container').find('img').eq(currentItem).fadeIn(initialTime);
+			console.log("WTF!");
+			
+			setInterval(function(){
+				console.log("masaka");
+
+				$('#logo--container').find('img').eq(currentItem).fadeOut(fadeTime);
+				if(currentItem == itemCount - 1){
+					currentItem = 0;
+				}
+				else{
+					currentItem++;
+				}
+				
+				$('#logo--container').find('img').eq(currentItem).fadeIn(fadeTime);
+				
+			},intervalTime);
+		}
+		else{
+			$('.logo').fadeIn(initialTime);
+		}
+		
 	}
 
 }
