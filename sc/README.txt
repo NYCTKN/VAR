@@ -9,3 +9,7 @@ Rough how-to:
 4. Done.
 
 Report bugs at http://github.com/farpenoodle/StreamControl/issues
+
+Stinger Settings:
+- Transition Point Type: Time(milliseconds)
+- Transition Point (milliseconds): 1000
