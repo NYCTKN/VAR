@@ -5,13 +5,13 @@
     "mText2": "",
     "mText3": "",
     "mText4": "",
-    "p1Name": "NAME",
+    "p1Name": "super long name super long",
     "p1Score": "0",
-    "p1Team": "TEAM",
-    "p2Name": "NAME",
+    "p1Team": "Super long team",
+    "p2Name": "qwerqwerqwerqwerqwreqwerqwerqwerqwer",
     "p2Score": "0",
     "p2Team": "TEAM",
-    "round": "Just",
-    "set": "Casuals",
-    "timestamp": "1627065051"
+    "round": "Grand Final",
+    "set": "First to 2",
+    "timestamp": "1649516521"
 }
