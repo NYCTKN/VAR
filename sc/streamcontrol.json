@@ -1,17 +1,19 @@
 {
+    "cTeam1": "Team/Sponsor",
+    "cTeam2": "Team/Sponsor",
     "cTitle1": "Pepperbeef2Spicy",
-    "cTitle2": "Bloodhawk 2",
+    "cTitle2": "Bloodhawk",
     "mText1": "",
     "mText2": "",
     "mText3": "",
     "mText4": "",
-    "p1Name": "super long name super long",
+    "p1Name": "qwerqwerqwerqwerqwreqwerqwerqwerqwer",
     "p1Score": "0",
-    "p1Team": "Super long team",
-    "p2Name": "qwerqwerqwerqwerqwreqwerqwerqwerqwer",
+    "p1Team": "TEAM",
+    "p2Name": "super long name super long",
     "p2Score": "0",
-    "p2Team": "TEAM",
-    "round": "Grand Final",
-    "set": "First to 2",
-    "timestamp": "1649516521"
+    "p2Team": "Super long team",
+    "round": "Just",
+    "set": "Casuals",
+    "timestamp": "1649533512"
 }

@@ -32,12 +32,14 @@
   </comboBox>
  </tab>
  <tab name="Commentary">
-  <label x="10" y="14" width="46" height="13">Title 1</label>
-  <label x="10" y="44" width="46" height="13">Title 2</label>
-  <lineEdit id="cTitle1" x="60" y="10" width="321" height="20" />
-  <lineEdit id="cTitle2" x="60" y="40" width="321" height="20" />
-   <button type="swap" x="170" y="70" width="60" height="23" tooltip="Swap the commentators" id="swap2" swapSet1="cTitle1" swapSet2="cTitle2">Swap</button>
-  <button type="reset" x="240" y="70" width="60" height="23" tooltip="Reset the commentators" id="reset3" reset="cTitle1,cTitle2">Reset</button>
+  <label x="10" y="14" width="46" height="13">Comm 1</label>
+  <label x="10" y="44" width="46" height="13">Comm 2</label>
+  <lineEdit id="cTitle1" x="60" y="10" width="170" height="20" dataSet="commentators.csv" dataField="1" />
+  <lineEdit id="cTeam1" x="240" y="10" width="60" height="20" dataSet="commentators.csv" dataField="2" master="cTitle1" />
+  <lineEdit id="cTitle2" x="60" y="40" width="170" height="20" dataSet="commentators.csv" dataField="1" />
+  <lineEdit id="cTeam2" x="240" y="40" width="60" height="20" dataSet="commentators.csv" dataField="2" master="cTitle2" />
+   <button type="swap" x="170" y="70" width="60" height="23" tooltip="Swap the commentators" id="swap2" swapSet1="cTitle1,cTeam1" swapSet2="cTitle2,cTeam2">Swap</button>
+  <button type="reset" x="240" y="70" width="60" height="23" tooltip="Reset the commentators" id="reset3" reset="cTitle1,cTeam1,cTitle2,cTeam2">Reset</button>
  </tab>
  <tab name="Misc 1">
   <label x="10" y="14" width="46" height="13">mText 1</label>

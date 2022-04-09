@@ -56,7 +56,9 @@ function init(){
 		var set = scObj['set'];
 		var cTitle1 = scObj['cTitle1'];
 		var cTitle2 = scObj['cTitle2'];
-		
+		var cTeam1 = scObj['cTeam1'];
+		var cTeam2 = scObj['cTeam2'];
+
 		if(startup == true){
 			
 			// TweenMax.set('#playerContainer1per',{css:{x: p1Move}}); //sets name/round wrappers to starting positions for them to animate from
@@ -73,6 +75,8 @@ function init(){
 			$('#set--value').html(set);
 			$('#commentator--name-1').html(cTitle1);
 			$('#commentator--name-2').html(cTitle2);
+			$('#commentator--team-1').html(cTeam1);
+			$('#commentator--team-2').html(cTeam2);
 			
 			playerContainer1.each(function(i, playerContainer1){ //function to resize font if text string is too long and causes div to overflow its width/height boundaries
 				$(playerContainer1).css('font-size',nameSize); //restores default font size based on variable set in scoreboard.html
@@ -215,11 +219,11 @@ function init(){
 				}});
 			}
 
-			if($('#commentator--name-1').text() != cTitle1 || $('#commentator--team-1').text() != p1Team){ //if either name or team do not match, fades out wrapper and updates them both
+			if($('#commentator--name-1').text() != cTitle1 || $('#commentator--team-1').text() != cTeam1){ //if either name or team do not match, fades out wrapper and updates them both
 				TweenMax.to('#commentator--container-1',.3,{css:{x: p1Move, opacity: 0},ease:Quad.easeOut,delay:0,onComplete:function(){ //uses onComplete parameter to execute function after TweenMax
 					$('#commentator--container-1').css('font-size',nameSize); //restores default font size based on variable set in scoreboard.html
 					$('#commentator--name-1').html(cTitle1); //updates name and team html objects with current json values
-					$('#commentator--team-1').html(p1Team);					
+					$('#commentator--team-1').html(cTeam1);					
 			
 					commentatorContainer1.each(function(i, commentatorContainer1){//same resize functions from above
 						while(commentatorContainer1.scrollWidth > commentatorContainer1.offsetWidth || commentatorContainer1.scrollHeight > commentatorContainer1.offsetHeight){
@@ -229,14 +233,15 @@ function init(){
 					});
 					
 					TweenMax.to('#commentator--name-1',.3,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:.2}); //fades name wrapper back in while moving to original position
+					TweenMax.to('#commentator--team-1',.3,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:.2}); //fades name wrapper back in while moving to original position
 				}});
 			}
 
-			if($('#commentator--name-2').text() != cTitle2 || $('#commentator--team-2').text() != p1Team){ //if either name or team do not match, fades out wrapper and updates them both
+			if($('#commentator--name-2').text() != cTitle2 || $('#commentator--team-2').text() != cTeam2){ //if either name or team do not match, fades out wrapper and updates them both
 				TweenMax.to('#commentator--container-2',.3,{css:{x: p1Move, opacity: 0},ease:Quad.easeOut,delay:0,onComplete:function(){ //uses onComplete parameter to execute function after TweenMax
 					$('#commentator--container-2').css('font-size',nameSize); //restores default font size based on variable set in scoreboard.html
 					$('#commentator--name-2').html(cTitle1); //updates name and team html objects with current json values
-					$('#commentator--team-2').html(p1Team);					
+					$('#commentator--team-2').html(cTeam2);					
 			
 					commentatorContainer2.each(function(i, commentatorContainer2){//same resize functions from above
 						while(commentatorContainer2.scrollWidth > commentatorContainer2.offsetWidth || commentatorContainer2.scrollHeight > commentatorContainer2.offsetHeight){
@@ -246,6 +251,7 @@ function init(){
 					});
 					
 					TweenMax.to('#commentator--name-2',.3,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:.2}); //fades name wrapper back in while moving to original position
+					TweenMax.to('#commentator--team-2',.3,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:.2}); //fades name wrapper back in while moving to original position
 				}});
 			}
 
