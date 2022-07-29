@@ -1,0 +1,17 @@
+<!DOCTYPE StreamControlLayout>
+<layout width="630" height="230">
+  <label x="15" y="10" width="240" height="20">Player</label>
+  <label x="265" y="10" width="40" height="20">Lives</label>
+  <% for (let i = 1; i <= 5; i++) { %>
+  <lineEdit id="handle1-<%= i %>" x="10" y="<%= 10 + 30 * i %>" width="170" height="20" dataSet="players.csv" dataField="1" />
+  <lineEdit id="sponsor1-<%= i %>" x="190" y="<%= 10 + 30 * i %>" width="60" height="20" dataSet="players.csv" dataField="2" master="handle1-<%= i %>" />
+  <spinBox id="lives1-<%= i %>" x="260" y="<%= 10 + 30 * i - 1 %>" width="40" height="25" maximum="2" />
+  <% } %>
+  <label x="335" y="10" width="40" height="20">Lives</label>
+  <label x="385" y="10" width="240" height="20">Player</label>
+  <% for (let i = 1; i <= 5; i++) { %>
+  <spinBox id="lives2-<%= i %>" x="330" y="<%= 10 + 30 * i - 1 %>" width="40" height="25" maximum="2" />
+  <lineEdit id="handle2-<%= i %>" x="380" y="<%= 10 + 30 * i %>" width="170" height="20" dataSet="players.csv" dataField="1" />
+  <lineEdit id="sponsor2-<%= i %>" x="560" y="<%= 10 + 30 * i %>" width="60" height="20" dataSet="players.csv" dataField="2" master="handle2-<%= i %>" />
+  <% } %>
+</layout>
