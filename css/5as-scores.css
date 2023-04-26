@@ -1,0 +1,127 @@
+@font-face {
+  src: url("../fonts/Rubik-Bold.ttf");
+  font-family: "Rubik";
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../fonts/Rubik-BoldItalic.ttf");
+  font-family: "Rubik";
+  font-weight: bold;
+  font-style: italic;
+}
+
+:root {
+  --bg-color: #151515;
+  --gray: #9b9b9b;
+  --red: #d0021b;
+  --yellow: #edcf5a;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--bg-color);
+  background-image: url(../img/5AS-SCORES-BG.png);
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Rubik";
+}
+
+main {
+  width: calc(1500/1920*100vw);
+  height: calc(500/1920*100vw);
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.team {
+  width: calc(461/1920*100vw);
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.row {
+  height: calc(60/1920*100vw);
+
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: space-between;
+  gap: calc(18/1920*100vw);
+}
+
+.team:not(:first-of-type) .row {
+  flex-flow: row nowrap;
+}
+
+.lives {
+  width: calc(33/1920*100vw);
+  flex: 0 0 auto;
+
+  color: transparent;
+  background-color: var(--bg-color);
+  outline: calc(5/1920*100vw) solid var(--bg-color);
+}
+
+.lives[data-value="1"] {
+  background: var(--yellow);
+}
+
+.lives[data-value="0"] {
+  background: var(--red);
+}
+
+.player {
+  flex: 1 0 auto;
+
+  text-align: center;
+  line-height: calc(60/1920*100vw);
+
+  color: black;
+  font-size: 1.6vw;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sponsor {
+  color: var(--red);
+}
+
+.lives[data-value="0"] ~ .player {
+  color: var(--gray);
+}
+
+.lives[data-value="0"] ~ .player .sponsor {
+  color: inherit;
+}
+
+.scores {
+  width: 26vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+  background-color: var(--bg-color);
+  font-size: 9vw;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+}
+
+.score {
+  font-size: 10.4vw;
+  font-style: italic;
+}
