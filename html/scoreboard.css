@@ -1,0 +1,135 @@
+@font-face {
+  src: url("../fonts/Rubik-Bold.ttf");
+  font-family: "Rubik";
+}
+
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: transparent;
+  background-image: url(../img/TEKKEN.jpg);
+  padding: 0px;
+  margin: 0px;
+  text-transform: uppercase;
+  color: black;
+  font-family: "Rubik";
+}
+
+.scoreboard {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.player1 {
+  position: absolute;
+  width: 385px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  top: 5px;
+  font-size: 30px;
+  background-color: white;
+}
+
+.player2 {
+  position: absolute;
+  width: 385px;
+  height: 60px; 
+  line-height: 60px;
+  text-align: center;
+  top: 5px;
+  font-size: 30px;
+  background-color: white;
+}
+
+.score1 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  left: 877px;
+  top: 5px;
+  font-size: 30px;
+  word-spacing: 15px;
+  color: white;
+  background-color: black;
+}
+
+.score2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  left: 877px;
+  top: 5px;
+  font-size: 30px;
+  word-spacing: 15px;
+  color: white;
+  background-color: black;
+}
+
+.round {
+  position: absolute;
+  width: 166px;
+  height: 60px;
+  left: 154px;
+  top: 5px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+}
+
+.set {
+  position: absolute;
+  width: 166px;
+  height: 60px;
+  left: 1601px;
+  top: 5px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+}
+
+.team {
+  color: #ce0e0e;
+}
+
+#player--container-1 {
+  left: 335px;
+  text-align: center;
+}
+
+#player--container-2 {
+  left: 1200px;
+  text-align: center;
+}
+
+#scoreContainer1 {
+  left:832px;
+  text-align: center;
+}
+
+#scoreContainer2 {
+  left: 1028px;
+  text-align: center;
+}
+
+#logo--container {
+  
+}
+
+.logo {
+  width: 175px;
+  height: 175px;
+  position: absolute;
+  left: 873px;
+  top: 877px;
+}
